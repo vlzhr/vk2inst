@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Скрипт</title>
+	<script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			requrl = "next_step"
+			window.setTimeout(function() {
+				while (true) {
+					if ($('.stop').val() != 'stop') {
+					  	$.getJSON(requrl, function(result){
+					  		for (n in result.instas) {
+					  			$('<p>' + result.instas[n] + '</p>').appendTo('section.log')
+					  		}
+					  		console.log(result.count)
+						})
+					}
+				}	
+			}, 10);
+		})
+	</script>
+</head>
+<body>
+	<input type="text" class="stop">
+	<section class="log">
+	</section>
+</body>
+</html>

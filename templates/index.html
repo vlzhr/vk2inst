@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Граббер Instagram-аккаунтов</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+
+	<style>	
+		body * {
+			font-family: 'Open Sans', sans-serif;
+		}
+		section {
+			padding: 40px 0px;
+    background: #e2e2e2;
+    background: -moz-linear-gradient(top, #fcfcfc 0%, #dbdbdb 50%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #fcfcfc 0%, #dbdbdb 50%, #fefefe 100%);
+    background: -o-linear-gradient(top, #fcfcfc 0%, #dbdbdb 50%, #fefefe 100%);
+    background: -ms-linear-gradient(top, #fff 0%, #dbdbdb 50%, #fefefe 100%);
+    background: linear-gradient(top, #fff 0%, #dbdbdb 50%, #fefefe 100%);
+			position: absolute;
+			left: 20%;
+			right: 20%;
+		}
+
+		form {
+    background: #e2e2e2;
+    background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #dbdbdb 0%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+			padding: 20px;
+			padding-left: 50px;
+		}
+		p, h1 {
+			padding-left: 50px;
+		}
+		input {
+			padding: 10px;
+			border-radius: 8px;
+
+		}
+		form div {
+
+
+			width: 100%;
+			padding: 30px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>Граббер аккаунтов Instagram</h1>
+		<p><i>Эта программа создает список инстаграм-аккаунтов пользователей, подписанных на выбранную группу ВК.</i></p>
+		<p>Для единичного запроса используйте форму нижe и запарсите ответ в формате JSON 
+		</p>
+		<p>Чтобы получить инстаграмы всех подписчиков группы, запустите цикл, отправляющий запросы с постепенным повышением номера шага (начиная с 0) и складывающий результаты в один список. Если сервер вернул {"error": "Out of range"}, значит, вся группа пропарсена.</p>
+		<p>Если у Вас еще нет ключа, Вы можете протестировать программу на пабликах vk.com/givenchystyle и vk.com/lone . Для этого оставьте поле "ключ доступа" пустым.</p>
+		<br>
+		<br>
+		<form action="">
+			<h3>Отправить запрос</h3>
+			<input type="text" name="step" placeholder="Номер шага">
+			<input type="text" name="group" placeholder="Ссылка на группу">
+			<input type="password" name="key" placeholder="Ключ доступа">
+			<br>
+			<div>
+			<span style="color: #555;">Пол и город:<br>
+			<label><input checked type="radio" name="extra" value="0"> не выводить</label>&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="radio" name="extra" value="1"> выводить</label></span>
+			</div>
+			<input type="submit">
+		</form>
+
+	</section>
+</body>
+</html>
